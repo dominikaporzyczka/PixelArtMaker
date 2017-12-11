@@ -7,21 +7,29 @@ var table = $('#pixel_canvas');
 
 function makeGrid() {
     $('#pixel_canvas').html('');
-    var rowInput= $('#input_height').val();
-    var colInput= $('#input_width').val();
+    var rowInput = $('#input_height').val();
+    var colInput = $('#input_width').val();
 
-    for(var i=1; i<=rowInput; i++) {
-        table.append('<tr>');
-        for(var j=1; j<=colInput; j++) {
-            table.append('<td></td>');
+    for (var i = 1; i <= rowInput; i++) {
+        var row = "";
+        row += "<tr>";
+        for (var j = 1; j <= colInput; j++) {
+            row += "<td></td>";
         }
-        table.append('</tr>');
+        row += "</tr>";
+        table.append(row);
     }
-    
+
 }
 
-
-$('#sizePicker').on('submit', function(){
+$('#sizePicker').on('submit', function () {
     makeGrid();
     return false;
+});
+
+$(table).on('click', 'td', function () {
+    var pickedColor, tableField;
+    pickedColor = $('#colorPicker').val();
+    tableField = $(this);
+    tableField.css('background', pickedColor);
 });
