@@ -1,16 +1,14 @@
 # Pixel Art Maker Project
 
-## Table of Contents
+The project has been created during the Udemy course -> Front-End Web Developer Nanodegree
 
-* [Instructions](#instructions)
-* [Contributing](#contributing)
+Udemy provided a startup html file and basic styles
 
-## Instructions
+## Demo
+https://dominikaporzyczka.github.io/PixelArtMaker/
 
-To get started, open `designs.js` and start building out the app's functionality.
+## Technogies
 
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
-
-## Contributing
-
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
+* HTML5
+* CSS3
+* jQuery
