@@ -16,7 +16,7 @@ Udemy provided a startup html file and basic styles
 ## Demo
 https://dominikaporzyczka.github.io/PixelArtMaker/
 
-## Technogies
+## Technologies
 
 * HTML5
 * CSS3
