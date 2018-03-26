@@ -30,12 +30,10 @@ const drawing = (function () {
         .on('click', 'td', draw)
 
         .on('mousedown', 'td', function () {
-            stillMouseDown = true;
-            whileMouseDown();
+            $(table).on('mousemove', 'td', draw);
         })
 
         .on('mouseup', function () {
-            stillMouseDown = false;
             $(table).off('mousemove', 'td', draw)
         });
 
@@ -45,12 +43,5 @@ const drawing = (function () {
         pickedColor = $('#colorPicker').val();
         tableField = $(this);
         tableField.css('background', pickedColor);
-    }
-
-    function whileMouseDown() {
-        if (!stillMouseDown) return;
-        else {
-            $(table).on('mousemove', 'td', draw);
-        }
     }
 })();
