@@ -14,8 +14,11 @@ h2 {
     font-family: 'Lato', sans-serif;    
 }
 form {
-    font-family: 'Lato', sans-serif;
-    
+    font-family: 'Lato', sans-serif;    
+}
+
+#input_height {
+    margin-right: 1em;
 }
 
 h2:first-of-type {
