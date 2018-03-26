@@ -15,7 +15,6 @@ function makeGrid() {
         row += "</tr>";
         table.append(row);
     }
-
 }
 
 // When size is submitted by the user, call makeGrid()
@@ -24,10 +23,34 @@ $('#sizePicker').on('submit', function () {
     return false;
 });
 
-// Select color input
-$(table).on('click', 'td', function () {
-    var pickedColor, tableField;
-    pickedColor = $('#colorPicker').val();
-    tableField = $(this);
-    tableField.css('background', pickedColor);
-});
+const drawing = (function () {
+    let stillMouseDown = false;
+
+    $(table)
+        .on('click', 'td', draw)
+
+        .on('mousedown', 'td', function () {
+            stillMouseDown = true;
+            whileMouseDown();
+        })
+
+        .on('mouseup', function () {
+            stillMouseDown = false;
+            $(table).off('mousemove', 'td', draw)
+        });
+
+    //Select color input
+    function draw() {
+        let pickedColor, tableField;
+        pickedColor = $('#colorPicker').val();
+        tableField = $(this);
+        tableField.css('background', pickedColor);
+    }
+
+    function whileMouseDown() {
+        if (!stillMouseDown) return;
+        else {
+            $(table).on('mousemove', 'td', draw);
+        }
+    }
+})();
