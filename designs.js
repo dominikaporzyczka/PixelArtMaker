@@ -1,10 +1,6 @@
-// Select color input
-// Select size input
-
-// When size is submitted by the user, call makeGrid()
-
 var table = $('#pixel_canvas');
 
+// Select size input
 function makeGrid() {
     $('#pixel_canvas').html('');
     var rowInput = $('#input_height').val();
@@ -22,11 +18,13 @@ function makeGrid() {
 
 }
 
+// When size is submitted by the user, call makeGrid()
 $('#sizePicker').on('submit', function () {
     makeGrid();
     return false;
 });
 
+// Select color input
 $(table).on('click', 'td', function () {
     var pickedColor, tableField;
     pickedColor = $('#colorPicker').val();
